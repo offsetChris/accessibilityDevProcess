@@ -1,0 +1,176 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" contet="ID=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accessibility, slide 1</title>
+    <link rel="stylesheet" href="../css/styles.css"/>
+  </head>
+  <body >
+    
+    <section class="site-container">
+      <h1>Accessibility in the Development Process</h1>
+    </section>
+
+    <section>
+      <h1>What is Accessibility</h1>
+      <ul>
+        <li>Access to web products for users who may utilize assistive technologies
+          <ul>
+            <li>Screen readers</li>
+            <li>Braille computers</li>
+            <li>Keyboard (non-mouse)</li>
+            <li>Voice Control (dragon speaking naturally)</li>
+            <li>Many more!</li>
+          </ul>
+        </li>
+        <li>Common considerations
+          <ul>
+            <li>Blindness</li>
+            <li>Hearing loss</li>
+            <li>Mobility loss</li>
+            <li>Colorblindness</li>
+            <li>Limited vision</li>
+            <li>Dexterity issues in fingers/arms</li>
+            <li>Cognitive imparements</li>
+            <li>Many more!</li>
+          </ul>
+        </li>
+      </ul>
+      <p>The point is not to categorize, but to hold our products to a higher standard for inclusivity.</p>
+    </section>
+
+    <section>
+      <h1>Web Accessibility</h1>
+      <p>Refers to standards set by Web Content Accessibility Guidelines (WCAG)</p>
+      <p>Include guidelines for content, design, coding, and testing best practices</p>
+    </section>
+
+    <section>
+      <h1>&ldquo;How would development know?&rdquo;</h1>
+      <h2>Developers! Own your process!</h2>
+      <p>Web accessibility is tied directly to the quality of your product.</p>
+      <p>Champion and take responsibility for accessibility specs.</p>
+      <ul>
+        <li>Document your process (give yourself credit)</li>
+        <li>Deliver results that are testable and trackable (lasting impression)</li>
+        <li>Gain experience (open conversations with other roles further up the pipeline)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>What we'll talk about</h1>
+      <ul>
+        <li>Easy wins: forms, focus state, dynamic UI</li>
+        <li>How to avoid the mile long audit?</li>
+        <li>How to push back.</li>
+        <li>Are there tools to help? Open discussion.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>Easy Win: Forms</h1>
+      
+      
+      <label for="inputID">This is a label!</label>
+      <input id="inputID" type="text">
+
+      <code>
+<pre>
+&lt;fieldset>
+  &lt;legend>This describes all the contained fields!&lt;/legend>
+
+  &lt;input type="checkbox" id="checkbox1">
+  &lt;label for="checkbox1">Checkbox&lt;/label>
+
+  &lt;input type="checkbox" id="checkbox2">
+  &lt;label for="checkbox2">Checkbox 2&lt;/label>
+&lt;/fieldset>
+</pre>
+        <fieldset>
+          <legend>This describes all the contained fields!</legend>
+          <input type="checkbox" id="checkbox1">
+          <label for="checkbox1">Checkbox</label>
+          <input type="checkbox" id="checkbox2">
+          <label for="checkbox2">Checkbox 2</label>
+        </fieldset>
+      </code>
+
+      <a href="https://offsetchris.github.io/design_challenges_CSUN/examples/forms.html" target="_blank">Pretty example</a>
+    </section>
+
+    <section>
+      <h1>Easy Win: Focus state</h1>
+      <p>Don't hide the focus or outline!</p>
+
+      <code>
+        CSS:
+<pre>
+button:focus{
+  outline:red auto 5px;
+}
+</pre>
+      </code>
+      <div>
+        Totally normal button --- > <button type="button">Normal button</button>    
+      </div>
+    </section>
+    
+    <section>
+      <h1>Quick code reviews</h1>
+      <ul>
+        <li>Tooltips, accordions, anything changing state with JavaScript
+          <ul>
+            <li>How will that change be announced?
+              <ul>
+                <li>aria-live, aria-expanded, role=alert</li>
+              </ul>
+            </li>
+            <li>How can users open/close without clicking?</li>
+          </ul>
+        </li>
+        <li>Elements only distinguished by color
+          <ul>
+            <li>Links in paragraphs of text</li>
+            <li>Status changes (complete, error, warning etc)</li>
+          </ul>
+        </li>
+        
+      </ul>
+    </section>
+
+    <section>
+      <h1>How can we avoid the 80 page post launch audit?</h1>
+      <ul>
+        <li>Code Reviews</li>
+        <li>Automated Tests</li>
+        <li>Pattern libraries (<a href="http://demo.patternlab.io/" target="_blank">Brad Frost's patternlab</a>)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>How to push back.</h1>
+      <ul>
+        <li>Hierarchy of the DOM vs UI?
+          <ul>
+            <li><img src="../images/BlogPost-example_arrow_small.png"></li>
+          </ul>
+        </li>
+        <li>Are the designs or wireframe missing accessibility requirements? (<a href="https://offsetchris.github.io/design_challenges_CSUN/examples/search.html" target="_blank">Search Example</a></a></li>
+        <li>Traversing componets through JavaScript vs page load</li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>What tools would be helpful to you?</h1>
+      <ul>
+        <li>Accessibility Checks? Automated and manual?</li>
+        <li>More relatable specs? In human language?</li>
+        <li>Automated tests in your CI/CD pipeline?</li>
+        <li>Pattern libraries?</li>
+        <li>Access to people or facilities for testing?</li>
+      </ul>
+    </section>
+  </body>
+</html>
