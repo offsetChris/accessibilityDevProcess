@@ -5,10 +5,14 @@ body{
 }
 section{
   min-height:100vh;
-  padding:5%;
+  padding:0px 5%;
 }
 h1{
-  font-size:3em;
+  font-size:2.5em;
+  border-bottom:1px solid #ccc;
+}
+h2{
+  font-size:1.75em;
 }
 button{
   cursor:pointer;
@@ -25,4 +29,11 @@ code{
 }
 ul li{
   margin:10px 0px;
+}
+.si-logo{
+  max-width:400px;
+  display:block;
+}
+.si-logo svg{
+  fill:#3c485e;
 }
